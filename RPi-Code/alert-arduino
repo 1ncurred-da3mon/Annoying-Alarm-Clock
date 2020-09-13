@@ -1,0 +1,30 @@
+#!/usr/bin/python3
+import serial # used to communicate with the arduino
+
+ser = serial.Serial("/dev/ttyACM0", 9600, timeout=1) # make a connection to the Serial
+ser.flush()
+
+# wait until the arduino is connected to continue. The arduino should respond with one of 2 possible responses
+while True:
+	ser.write(b"PING\n")
+	line = ser.readline().decode('utf-8').rstrip()
+	if line == "REDE" or line == "LIVE":
+		break
+
+def waitFor(target: str) -> None:
+	'''
+	wait for the arduino to respond
+	with [target] str.
+	'''
+	while True:
+		ser.write(b"CHECKL\n")
+		s = ser.readline().decode('utf-8').rstrip()
+		print(s)
+		if s == target:
+			return
+
+# tell the arduino to start the lights
+ser.write(b"STARTL\n")
+# wait until the arduino responds back
+waitFor("STATUS:LIVE")
+print("Script: Alert; Started!")

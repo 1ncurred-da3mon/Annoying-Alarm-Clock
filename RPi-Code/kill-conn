@@ -1,0 +1,30 @@
+#!/usr/bin/python3
+
+import serial		# used to communicate with the arduino
+
+ser = serial.Serial("/dev/ttyACM0", 9600, timeout=1) # make connection with arduino
+ser.flush()
+
+# ping arduino until one of 2 responses is received
+while True:
+	ser.write(b"PING\n")
+	line = ser.readline().decode('utf-8').rstrip()
+	if line == "REDE" or line == "LIVE":
+		break
+def waitFor(target: str) -> None:
+	'''
+	wait for the arduino to respond
+	with [target] str.
+	'''
+	while True:
+		ser.write(b"CHECKL\n")
+		s = ser.readline().decode('utf-8').rstrip()
+		print(s)
+		if s == target:
+			return
+
+# send command to stop the arduino from blinking
+ser.write(b"HALT\n")
+# wait until arduino responds
+waitFor("STATUS:OFF")
+print("Script: Kill-Conn; Success")

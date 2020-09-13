@@ -1,0 +1,43 @@
+#!/usr/bin/python3
+
+import alsaaudio as audio	# used to set volume to max
+import simpleaudio as sa	# play audio
+import random as rand		# play random sounds
+import os					# get all audio files in the audio folder
+import time					# sleep
+
+# list to store all wav files
+sounds = []
+
+# loop through all the audio files in the audio folder
+for file in os.listdir('/home/pi/Code/NodeJs/AlarmClock/audio'):
+	# check if the file ends with '.wav' and append it to the sounds list
+	if file.endswith('.wav'):
+		sounds.append('/home/pi/Code/NodeJs/AlarmClock/audio/' + file)
+
+def playsound()-> None:
+	'''
+	plays the audio.
+	'''
+	# create the audio object
+	wave = sa.WaveObject.from_wave_file(rand.choice(sounds))
+	# sleep for a random time.
+	time.sleep(rand.uniform(0.7, 2))
+	# play the audio
+	play = wave.play()
+	# constantly loop
+	while True:
+		# if it is not playing any audio, play a new sound
+		if not play.is_playing():
+			wave = sa.WaveObject.from_wave_file(rand.choice(sounds))
+			time.sleep(rand.uniform(0.8, 1.3))
+			play = wave.play()
+	p.wait_done()
+
+if __name__ == '__main__':
+	# set output to Headphone since Pi is outputting through 3.5mm auxillary jack
+	mixer = audio.Mixer("Headphone")
+	# set the volume to 100
+	mixer.setvolume(100)
+	# start playing the sounds
+	playsound()
