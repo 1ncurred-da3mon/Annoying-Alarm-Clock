@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html lang="en" style="margin:0; padding: 0;">
+	<head>
+		<title>Alarm Clock</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1.3">
+		<link rel="stylesheet" type="text/css" href="/CSS/index.css">
+		
+	</head>
+	<body>
+		<header>
+			<div id="titlecard">
+				<h1 id="main-title">Annoying Alarm Clock</h1>
+			</div>
+		</header>
+		<div id="buttons_table">
+			<div class="extra-div">
+				<button id="create_button" class="std_button" type="button" value="Create a New Alarm" onclick="window.location.href='http://192.168.6.1:8080/create-alarm'">Create Alarm</button>
+				<button id="list_button" class="std_button" type="button" value="List All Alarms" onclick="window.location.href='http://192.168.6.1:8080/alarms-list'">See Alarm(s)</button>
+			</div>		
+		</div>
+		<div id="timer-countdown">
+			<div id="countdown-container" onload="updateCountDown()">
+			</div>	
+		</div>
+		<button id="stop-button" type="button" onclick="stopAlarm()">STOP</div>
+		<script src="/JS/index.js"></script>
+	</body>
+</html>

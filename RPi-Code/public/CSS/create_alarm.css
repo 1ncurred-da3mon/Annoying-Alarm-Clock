@@ -1,0 +1,93 @@
+html {
+	width: 100%;
+	height: 500px;
+}
+
+#timer-block {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-width: 50%;
+	margin: 0 auto;
+}
+
+#alarm-set {
+	margin: 0 auto;
+	min-width: 12vw;
+	max-width: 25vw;
+	min-height: 3vw;
+	max-height: 12vw;
+	font-size: 5vw;
+}
+#timer-label-container {
+	display: block;
+	justify-content: center;
+	align-items: center;
+	margin: 0 auto;
+}
+#timer-label {
+	text-align: center;
+	font-size: 14vw;
+}
+
+#input-name-block {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 50%;
+	margin: 0 auto;
+	
+}
+
+#alarm-name {
+	margin: 0 auto;
+	height: 8vw;
+	min-width: 50%;
+	font-size: 4vw;
+	border-radius: 60px;
+}
+
+#submit-button-container {
+	display: flex;
+	width: 50%;
+	justify-content: center;
+	align-items: center;
+	margin: 2% auto;
+}
+
+#submit-button {
+	min-width: 50%;
+	max-width: 100%;
+	min-height: 8vw;
+	max-height: 28vw;
+	font-size: 6vw;
+	border-radius: 70px;
+}
+
+#edit-button-container {
+	display: flex;
+	width: 50%;
+	justify-content: center;
+	align-items: center;
+	margin: 2% auto;
+}
+
+#update-button {
+	background-color: #61FF4D;
+	border-radius: 70px;
+	min-width: 50%;
+	max-width: 100%;
+	min-height: 8vw;
+	max-height: 28vw;
+	font-size: 6vw;
+}
+
+#delete-button {
+	background-color: #FF9946;
+	border-radius: 70px;
+	min-width: 50%;
+	max-width: 100%;
+	min-height: 8vw;
+	max-height: 28vw;
+	font-size: 6vw;
+}

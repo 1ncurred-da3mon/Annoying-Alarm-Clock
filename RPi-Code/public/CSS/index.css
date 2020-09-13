@@ -1,0 +1,73 @@
+html {
+	background-color: rgb(255, 95, 95);
+}
+#titlecard {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 5%;
+}
+
+#main-title {
+	width: 50%;
+	margin: auto;
+	text-align: center;
+	font-size: 8vw;
+}
+
+#buttons_table {
+	diplay: flex;
+	margin: 3% auto;
+	align-items: center;
+	justify-content: center;
+	
+}
+
+.extra-div {
+	display: flex;
+	margin: 0 auto;
+}
+
+.std_button {
+	display: inline-flexbox;
+	background-color: rgb(229, 229, 229);
+	border-radius: 80px;
+	min-height: 20vw;
+	font-size: large;
+	min-width: 50vw;
+	margin: 0 auto;
+	letter-spacing: 3px;
+}
+
+#timer-countdown {
+	display: flex;
+	margin: 0 auto;
+	justify-content: center;
+	align-items: center;
+	width: 50%;
+}
+
+#countdown-container {
+	display: box;
+	margin: 0 auto;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+}
+
+#countdown {
+	text-align: center;
+	margin: auto;
+	width: 50%;
+}
+
+#stop-button {
+	font-size: 32px;
+	font-weight: bold;
+	margin: 2% auto;
+	background-color: rgb(255, 185, 185);
+	border-radius: 80px;
+	min-height: 65vw;
+	width: 100%;
+}
+

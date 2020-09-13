@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html lang="en" style="margin:0; padding: 0;">
+	<head>
+		<title>Alarm Clock - Create</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="CSS/index.css">
+		<link rel="stylesheet" type="text/css" href="CSS/create_alarm.css">
+		<script src="JS/submit-alarm.js"></script>
+	</head>
+	<body>
+		<div id="timer-block">
+			<div id="timer-container">
+				<input type="time" id="alarm-set"><br/>
+			</div>
+		</div>
+		<div id="timer-label-container">
+				<h2 id="timer-label">Enter a new time!<br/>And Give It A Name!</h2>
+		</div>
+		<div id="input-name-block">
+			<input type="input" maxlength="21" name="alarm-name" id="alarm-name">
+		</div>
+		<div id="submit-button-container">
+			<button type="submit" id="submit-button" onclick="verifyAlarm()">Set Alarm</button>
+			<script src="JS/submit-alarm.js"></script>
+		</div>
+	</body>
+</html>
